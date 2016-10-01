@@ -1,0 +1,6 @@
+[package]
+name = "hard-disks"
+version = "0.1.0"
+authors = ["Oscar David Arbeláez <oscar.arbelaez@adroll.com>"]
+
+[dependencies]
