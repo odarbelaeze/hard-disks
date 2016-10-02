@@ -1,6 +1,6 @@
 extern crate hard_disks as hd;
 
-use hd::Vector2;
+use hd::geom::Vector2;
 
 
 #[test]
