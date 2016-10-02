@@ -1,1 +1,4 @@
 target
+
+# Til we have some meaningful dependencies of binary
+Cargo.lock
