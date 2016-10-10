@@ -56,3 +56,36 @@ impl Vector2 {
         }
     }
 }
+
+
+pub struct Box2 {
+    ll: Vector2,
+    ur: Vector2,
+}
+
+
+impl Box2 {
+    pub fn new(ll: &Vector2, ur: &Vector2) -> Box2 {
+        if ll.comps() > ur.comps() {
+            panic!("Lower left should be lesser than upper right");
+        }
+        Box2 {
+            ll: ll.clone(),
+            ur: ur.clone(),
+        }
+    }
+
+    pub fn rectangle(w: f64, h: f64) -> Box2 {
+        if w < 0.0 || h < 0.0 {
+            panic!("Negative width or height is something to panic at");
+        }
+        Box2 {
+            ll: Vector2::zero(),
+            ur: Vector2::new(w, h),
+        }
+    }
+
+    pub fn contains(&self, vec: &Vector2) -> bool {
+        vec.comps() >= self.ll.comps() && vec.comps() <= self.ur.comps()
+    }
+}
