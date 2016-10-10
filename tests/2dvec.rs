@@ -11,8 +11,9 @@ fn test_vector2_can_be_newed_up() {
 #[test]
 fn test_vector2_keeps_its_properties() {
     let vec = Vector2::new(1.0, 2.0);
-    assert_eq!(vec.x, 1.0);
-    assert_eq!(vec.y, 2.0);
+    let (x, y) = vec.comps();
+    assert_eq!(x, 1.0);
+    assert_eq!(y, 2.0);
 }
 
 #[test]
@@ -27,8 +28,9 @@ fn test_vector2_implements_distance() {
 #[test]
 fn test_vector2_implements_zero() {
     let zero = Vector2::zero();
-    assert_eq!(zero.x, 0.0);
-    assert_eq!(zero.y, 0.0);
+    let (x, y) = zero.comps();
+    assert_eq!(x, 0.0);
+    assert_eq!(y, 0.0);
 }
 
 #[test]

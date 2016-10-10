@@ -3,8 +3,8 @@ use std::ops::Sub;
 
 #[derive(Debug, Clone)]
 pub struct Vector2 {
-    pub x: f64,
-    pub y: f64,
+    x: f64,
+    y: f64,
 }
 
 impl PartialEq for Vector2 {
@@ -27,6 +27,10 @@ impl<'a, 'b> Sub<&'a Vector2> for &'b Vector2 {
 impl Vector2 {
     pub fn new(x: f64, y: f64) -> Vector2 {
         Vector2 {x: x, y: y}
+    }
+
+    pub fn comps(&self) -> (f64, f64) {
+        (self.x, self.y)
     }
 
     pub fn zero() -> Vector2 {
